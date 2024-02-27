@@ -109,11 +109,11 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Juan2024$default', # Nombre de la base de datos que creaste
-        'USER': 'Juan2024', # Usuario de MySQL
-        'PASSWORD': 'Api2024.', # Contraseña de MySQL
-        'HOST': 'Juan2024.mysql.pythonanywhere-services.com', # Host de MySQL, generalmente localhost
-        'PORT': '3306', # Puerto de MySQL, generalmente 3306
+        'HOST': 'srv1199.hstgr.io',
+        'PORT': '3306',
+        'USER': 'u504036119_app',
+        'PASSWORD': 'Edwin19982.',
+        'NAME': 'u504036119_app',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
