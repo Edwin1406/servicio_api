@@ -95,13 +95,23 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'servicio_api', # Nombre de la base de datos que creaste
+#         'USER': 'root', # Usuario de MySQL
+#         'PASSWORD': '', # Contraseña de MySQL
+#         'HOST': 'localhost', # Host de MySQL, generalmente localhost
+#         'PORT': '3306', # Puerto de MySQL, generalmente 3306
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'servicio_api', # Nombre de la base de datos que creaste
-        'USER': 'root', # Usuario de MySQL
-        'PASSWORD': '', # Contraseña de MySQL
-        'HOST': 'localhost', # Host de MySQL, generalmente localhost
+        'NAME': 'Agro23$default', # Nombre de la base de datos que creaste
+        'USER': 'Agro23', # Usuario de MySQL
+        'PASSWORD': 'Api2024.', # Contraseña de MySQL
+        'HOST': 'Agro23.mysql.pythonanywhere-services.com', # Host de MySQL, generalmente localhost
         'PORT': '3306', # Puerto de MySQL, generalmente 3306
     }
 }
