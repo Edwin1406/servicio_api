@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']  # Solo para desarrollo, debes especificar los dominios en producción.
 
-
+# CORS_ORIGIN_WHITELIST = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -66,11 +66,11 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ORIGIN_WHITELIST = [
-    "http://127.0.0.1:8000",  # Para desarrollo local
-    "https://serviacrilico.com",
-    "http://127.0.0.1:5501",  # Agrega aquí tu dominio en producción
-]
+# CORS_ORIGIN_WHITELIST = [
+#     "http://127.0.0.1:8000",  # Para desarrollo local
+#     "https://serviacrilico.com",
+#     "http://127.0.0.1:5501",  # Agrega aquí tu dominio en producción
+# ]
 
 
 
