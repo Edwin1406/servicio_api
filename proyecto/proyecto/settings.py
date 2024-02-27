@@ -59,8 +59,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "allauth.account.middleware.AccountMiddleware",
-    'allauth.middleware.AllAuthMiddleware',
-
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -97,23 +95,13 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'servicio_api', # Nombre de la base de datos que creaste
-#         'USER': 'root', # Usuario de MySQL
-#         'PASSWORD': '', # Contraseña de MySQL
-#         'HOST': 'localhost', # Host de MySQL, generalmente localhost
-#         'PORT': '3306', # Puerto de MySQL, generalmente 3306
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Agro23$default', # Nombre de la base de datos que creaste
-        'USER': 'Agro23', # Usuario de MySQL
-        'PASSWORD': 'Api2024.', # Contraseña de MySQL
-        'HOST': 'Agro23.mysql.pythonanywhere-services.com', # Host de MySQL, generalmente localhost
+        'NAME': 'servicio_api', # Nombre de la base de datos que creaste
+        'USER': 'root', # Usuario de MySQL
+        'PASSWORD': '', # Contraseña de MySQL
+        'HOST': 'localhost', # Host de MySQL, generalmente localhost
         'PORT': '3306', # Puerto de MySQL, generalmente 3306
     }
 }
@@ -174,6 +162,6 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
