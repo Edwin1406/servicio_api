@@ -3,7 +3,6 @@
 import os
 import sys
 
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proyecto.settings')
@@ -15,8 +14,12 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+    
+    # Verifica si el comando 'runserver' se proporciona y si no, usa el puerto predeterminado 8000
+    if 'runserver' in sys.argv and '--port' not in sys.argv:
+        sys.argv += ['--', '8001']  # Puedes cambiar '8001' al puerto que desees
+    
     execute_from_command_line(sys.argv)
-
 
 if __name__ == '__main__':
     main()

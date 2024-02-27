@@ -110,7 +110,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'srv1199.hstgr.io',
-        'PORT': '3307',
+        'PORT': '3306',
         'USER': 'u504036119_app',
         'PASSWORD': 'Edwin19982.',
         'NAME': 'u504036119_app',
