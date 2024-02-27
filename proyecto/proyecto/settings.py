@@ -109,14 +109,14 @@ WSGI_APPLICATION = 'proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'srv1199.hstgr.io',
-        'PORT': '3310',
-        'USER': 'u504036119_app',
-        'PASSWORD': 'Edwin19982.',
-        'NAME': 'u504036119_app',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'HOST': 'Juan2024.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+        'USER': 'Juan2024',
+        'PASSWORD': 'Api2024.',
+        'NAME': 'Juan2024$default',
+        # 'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        # }
     }
 }
 
