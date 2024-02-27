@@ -27,11 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']  # Solo para desarrollo, debes especificar los dominios en producción.
 
-# CORS_ORIGIN_WHITELIST = []
+
 # Application definition
 
-# CORS_ORIGIN_WHITELIST = []
-# CORS_ALLOW_ALL_ORIGINS = True
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'cotizaciones',
+    'allauth',
+    'allauth.account',
+    'corsheaders',
+    'allauth.socialaccount',
 ]
+
 
 
 
@@ -48,17 +53,19 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
-
-# CORS_ORIGIN_WHITELIST = [
-#     "http://127.0.0.1:8000",  # Para desarrollo local
-#     "https://serviacrilico.com",
-#     "http://127.0.0.1:5501",  # Agrega aquí tu dominio en producción
-# ]
+CORS_ORIGIN_WHITELIST = [
+    "http://127.0.0.1:8000",  # Para desarrollo local
+    "https://serviacrilico.com",
+    "http://127.0.0.1:5501",  # Agrega aquí tu dominio en producción
+]
 
 
 
