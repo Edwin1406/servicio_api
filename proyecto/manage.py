@@ -17,7 +17,7 @@ def main():
     
     # Verifica si el comando 'runserver' se proporciona y si no, usa el puerto predeterminado 8000
     if 'runserver' in sys.argv and '--port' not in sys.argv:
-        sys.argv += ['--', '8001']  # Puedes cambiar '8001' al puerto que desees
+        sys.argv += ['--', '8002']  # Puedes cambiar '8001' al puerto que desees
     
     execute_from_command_line(sys.argv)
 
