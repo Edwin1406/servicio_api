@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'cotizaciones',
     'allauth',
     'allauth.account',
     'corsheaders',
     'allauth.socialaccount',
+    'cotizaciones',
 ]
 
 
@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AuthenticationMiddleware',
-    # "allauth.account.middleware.AccountMiddleware",
 ]
+
 
 CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:8000",  # Para desarrollo local
