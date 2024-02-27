@@ -1,0 +1,63 @@
+{% include 'cabecera.html' %}
+
+
+<style>
+  .card-header{background: linear-gradient(90deg, rgb(80, 139, 169) 0%, rgb(38, 112, 150)45%, rgba(114,228,221,1) 100%)}
+  
+  h1{color: rgb(8, 96, 80);}
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid;
+    transition: background-color 0.3s ease;
+  }
+
+  label {
+    font-size: 18px
+  }
+
+  textarea:hover,input:hover {
+    border: 2px solid;
+    border-color: rgba(148, 233, 216, 1);
+    /* Cambia el color del borde al pasar el ratón por encima con el segundo color proporcionado */
+  }
+
+
+  body {
+    background-image: linear-gradient(90deg, rgba(233, 162, 232, 1) 0%, rgba(148, 233, 216, 1) 100%);
+        
+  }
+
+
+
+</style>
+
+
+
+<body>
+
+<div class="container" style="margin-top: 2%;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="mb-0" style="color: white;">Editar Producto</h1>
+        </div>
+        <div class="card-body">
+          <form method="post" action="{% url 'editar_producto' producto.id %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary" 
+            style="color:white; width: 100% ; 
+            background-image: linear-gradient(90deg, rgb(57, 126, 114) 0%, rgb(101, 199, 181) 100%);" 
+            class="btn btn-primary">Guardar Cambios</button>
+          </form>
+          <br>
+          <a href="{% url 'lista_productos' %}" style="width: 100%;" class="btn btn-warning">Volver a la lista de productos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+{% include 'pie.html' %}

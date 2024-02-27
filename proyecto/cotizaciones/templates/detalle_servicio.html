@@ -1,0 +1,43 @@
+{% include 'cabecera.html' %}
+
+<style>
+  body {
+    background-image: linear-gradient(90deg, rgba(233, 162, 232, 1) 0%, rgba(148, 233, 216, 1) 100%);
+        
+  }
+</style>
+
+
+<body>
+<div class="container" style="text-align: center; margin-top: 5%;">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="mb-0">Detalle del Servicio</h1>
+        </div>
+        <div class="card-body text-center">
+          <h2>{{ servicio.nombre }}</h2>
+          <p>Descripción: {{ servicio.descripcion }}</p>
+          <ul class="list-group">
+            <li class="list-group-item">Productos:</li>
+            <ul class="list-group">
+              {% for producto in servicio.productos.all %}
+                <li class="list-group-item">{{ producto.nombre }}</li>
+              {% endfor %}
+            </ul>
+          </ul>
+          
+          <a href="{% url 'lista_servicios' %}" class="btn btn-warning">Volver a la lista de servicios</a>
+          <a href="{% url 'editar_servicio' servicio.id %}" class="btn btn-primary">Editar Servicio</a>
+          <form method="post" action="{% url 'eliminar_servicio' servicio.id %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este servicio?')">Eliminar Servicio</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+{% include 'pie.html' %}

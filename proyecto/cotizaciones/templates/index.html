@@ -1,0 +1,123 @@
+{% include 'cabecera.html' %}
+{% load static %}
+
+<style>
+    .btn-section {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    .btn-section a {
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .btn-section a:hover {
+        opacity: 0.8;
+    }
+    
+    .productos-section {
+        border-radius: 25px;
+        background-image: linear-gradient(90deg, rgb(51, 113, 102) 0%, rgb(101, 199, 181) 100%);
+    
+    }
+
+    .productos-section img {
+    max-width: 100%; /* La imagen no será más ancha que el contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+}
+    
+    .servicios-section {
+        border-radius: 25px;
+        background-image: linear-gradient(90deg, rgb(110, 59, 91) 0%, rgb(199, 101, 174) 100%);
+    
+    }
+    
+    .crear-usuario-section {
+        
+        width: 40%; /* Ajustar el tamaño al contenido del botón */
+        margin: 0 auto; /* Centrar horizontalmente */
+    }
+    
+    body {
+        background-image: linear-gradient(90deg, rgba(233, 162, 232, 1) 0%, rgba(148, 233, 216, 1) 100%);
+        
+    }
+</style>
+
+<body >
+
+    <div class="container text-center mt-5" >
+
+        {% if request.user.is_authenticated %}
+
+        <h1>{{ request.user }}</h1>
+        <p>Autenticado</p>
+
+        {% else %}
+
+        <p>No Autenticado</p>
+
+        {% endif %}
+
+        <hr>
+        <br>
+        {% if request.user.is_authenticated %}
+        <div class="btn-section">
+            <div class="productos-section" >
+                <img src="{% static 'img/riego4.png' %}" alt="Productos" width="100">
+                <br>
+                <a href="productos/">Ver productos</a>
+                <a href="productos/crear/">Crear Productos</a>
+            </div>
+            <div class="servicios-section">
+                <img src="{% static 'img/riego.png' %}" alt="Servicios" width="100">
+                <br>
+                <a href="servicios/">Ver servicios</a>
+                <a href="servicios/crear/">Crear Servicios</a>
+            </div>
+        </div>
+
+        <hr>
+
+        
+
+        <div class="btn-section crear-usuario-section">
+            
+            <a href="signup/" class="btn btn-primary" 
+            style="color:white; width: 50% ;
+            background-image: linear-gradient(90deg, rgb(89, 132, 69) 0%, rgb(142, 199, 101) 100%)"
+            class="btn btn-primary"><img src="{% static 'img/riego2.png' %}" alt="Crear" width="100">
+                <br>Crear Usuario</a>
+                <a href="api/" class="btn btn-primary" 
+                style="color:white; width: 30% ;
+                background-image: linear-gradient(90deg, rgb(89, 132, 69) 0%, rgb(159, 98, 169) 100%)"
+                class="btn btn-primary"><img src="{% static 'img/api.png' %}" alt="Crear" width="100">
+                    <br>Api</a>
+        </div>
+
+      
+
+        {% else %}
+
+        <div class="btn-section">
+            
+            <a href="login/" 
+            style="color:white; width: 60% ;
+              background-image: radial-gradient(circle, rgba(209, 238, 174, 1) 0%, rgba(233, 148, 207, 1) 100%); 
+              color: black;" 
+            class="btn btn-primary"><img src="{% static 'img/riego3.png' %}" alt="Servicios" width="100" >
+                <br> Login</a>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+{% include 'pie.html' %}

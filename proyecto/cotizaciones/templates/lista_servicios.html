@@ -1,0 +1,30 @@
+{% include 'cabecera.html' %}
+
+<style>
+body {
+    background-image: linear-gradient(90deg, rgba(233, 162, 232, 1) 0%, rgba(148, 233, 216, 1) 100%);
+        
+  }
+</style>
+
+<body>
+<div class="container mt-5">
+    <h1>Lista de Servicios</h1>
+
+    <ul class="list-group mt-3">
+        {% for servicio in servicios %}
+        <li class="list-group-item">
+            <a href="{% url 'detalle_servicio' servicio.id %}" class="text-decoration-none">{{ servicio.nombre }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'crear_servicio' %}" 
+    class="btn btn-info mt-3" 
+    style="color:white; width: 30%;
+    background-image: linear-gradient(90deg, rgb(57, 126, 114) 0%, rgb(101, 199, 181) 100%);"
+    >Crear nuevo servicio</a>
+    <a href="/" class="btn btn-warning mt-3">Retroceder</a>
+</div>
+</body>
+{% include 'pie.html' %}
